@@ -55,16 +55,16 @@ workflows:
   build-test-and-deploy:
     jobs:
       - build-and-test:
-          context: <YOUR_CONTEXT_NAME>
+          context: fastapi-circleci-lambda
           filters:
             branches:
               only:
-                - cicd-demo-dev
+                - master
       - deploy-dev:
-          context: <YOUR_CONTEXT_NAME>
+          context: fastapi-circleci-lambda
           requires:
             - build-and-test
           filters:
             branches:
               only:
-                - cicd-demo-dev
+                - master
