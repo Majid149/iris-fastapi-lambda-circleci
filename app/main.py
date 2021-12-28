@@ -14,7 +14,7 @@ class iris(BaseModel):
 model = pickle.load(open('app/model_iris', 'rb'))
 @app.get("/")
 def home():
-    return {"msg": "ML model for IRIS PREDICTION ::"}
+    return {"msg": "ML model for IRIS PREDICTION"}
 
 @app.post('/make_predictions')
 async def make_prediction(features : iris):
